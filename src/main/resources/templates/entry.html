@@ -13,6 +13,10 @@
 			+
 			<input type="text" th:field="*{rightNum}">
 		</div>
+		<!-- エラーを表示する -->
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
+		</ul>
 		<input type="submit" value="計算">
 	</from>
 </body>
